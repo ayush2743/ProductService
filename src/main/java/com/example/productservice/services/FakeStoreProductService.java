@@ -9,7 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service     //Dependency Injection
+@Service   //Dependency Injection
 public class FakeStoreProductService implements ProductService{
 
     // Allows to send API requests to any URL
@@ -37,19 +37,16 @@ public class FakeStoreProductService implements ProductService{
 
         return null;
     }
-
     @Override
     public Product getSingleProduct(long id) {
 
-        //the JSON file which we will receive from the API
-        FakeStoreProductDto fakeStoreProductDto =  restTemplate.getForObject(
+        FakeStoreProductDto fakeStoreProductDto = restTemplate.getForObject(
                 "https://fakestoreapi.com/products/" + id,
                 FakeStoreProductDto.class
         );
-
         return covertJSONToProduct(fakeStoreProductDto);
-
     }
+
 
     @Override
     public Product createProduct(Product product) {

@@ -13,3 +13,8 @@ public class FakeStoreProductDto {
     private String description;
     private String image;
 }
+//This the structure of output we will get from fakestore
+
+
+//This is the things what company want to expose the data to the clients.
+// Like hiding all the irrelevant details and showing only necessary details
